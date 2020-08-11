@@ -31,6 +31,16 @@ class Melon(object):
                                              self.weight,
                                              self.melon_type)
 
-# FIXME: Add Squash class definition here.
+
 class Squash(Melon):
-    pass
+    """"Class for winter squashes, a type of melon."""
+
+    def __init__(self, melon_type):
+        """Initialize squash order attributes."""
+        super().__init__(melon_type)
+
+    def prep(self):
+        """Prep the melon and paint the melon."""
+        robots.cleanerbot.clean(self)
+        robots.stickerbot.apply_logo(self)
+        robots.painterbot.paint(self)
